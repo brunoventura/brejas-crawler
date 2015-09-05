@@ -34,7 +34,7 @@ while (true) {
         });
 
         return result;
-    }).each(function(breja) {
+    }).each(function(breja) {  // This each is from bluebird, you cna use .map, but each is serial, and map is parallel
         return requestGet(breja.url).then(function(html) {
             var $ = cheerio.load(html[1]);
             breja.img = $('.jrListingMainImage img').attr('src');
