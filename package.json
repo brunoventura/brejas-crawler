@@ -17,11 +17,8 @@
   },
   "homepage": "https://github.com/brunoventura/brejas-crawler",
   "dependencies": {
-    "express": "~4.13.3",
-    "cheerio": "~0.19.0",
-    "request": "~2.61.0",
-    "request-promise": "~0.4.3",
-    "async": "~1.4.2",
-    "q": "~1.4.1"
+    "bluebird": "^2.9.34",
+    "cheerio": "^0.19.0",
+    "request": "^2.61.0"
   }
 }
