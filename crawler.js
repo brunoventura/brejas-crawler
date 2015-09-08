@@ -23,6 +23,9 @@ var c = new Crawler({
                 // The global callback won't be called
                 callback: function (error, result, $) {
                     breja.img = $(".jrListingMainImage img").attr("src");
+                    breja.cervejaria = $(".jrCervejaria .jrFieldValue").text()
+                    breja.rating = $(".jrListingInfoContainer .jrOverallUser > .jrRatingValue span:first-child").text();
+
                     brejas.push(breja);
                     console.log(brejas.length);
                 }
@@ -37,6 +40,6 @@ var c = new Crawler({
 });
 
 var urls = function(pages) {
-    return Array.apply(null, {length: pages}).map(function(item, i){return baseUrl + "/cerveja?page=" + (i+1)})
+    return Array.apply(null, {length: pages}).map(function(item, i){return baseUrl + "/cerveja/?page=" + (i+1) + "&order=rhits"})
 };
-c.queue(urls(10));
+c.queue(urls(20));
